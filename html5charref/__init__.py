@@ -13,7 +13,7 @@ from pprint import pprint
 __version__ = '0.1.0'
 
 UPDATE_URL = r'http://dev.w3.org/html5/html-author/charref'
-CACHE_FILENAME = 'html5charref.data'
+CACHE_FILENAME = 'data/html5charref.data'
 
 charref_map = None
 unicode_map = None
