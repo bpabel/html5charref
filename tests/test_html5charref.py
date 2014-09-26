@@ -69,5 +69,3 @@ def test_update_charrefs():
     assert os.path.isfile(filepath)
     assert os.path.getmtime(filepath) != mtime
 
-
-# retrun '\\u{0:04x}'.format(ord(me)).decode('unicode-escape')
