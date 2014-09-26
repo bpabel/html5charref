@@ -1,7 +1,15 @@
 html5charrefs
 =============
 
-![travisci](https://travis-ci.org/bpabel/html5charref.svg)
+[![Build Status]
+(https://travis-ci.org/bpabel/html5charref.svg)]
+(https://travis-ci.org/bpabel/html5charref)
+
+<!---
+[![Coverage Status]
+(https://img.shields.io/coveralls/what-studio/profiling.svg)]
+(https://coveralls.io/r/what-studio/profiling)
+-->
 
 Python library for escaping/unescaping HTML5 Named Character References.
 
