@@ -1,4 +1,9 @@
 html5charrefs
 =============
 
-Python library for escaping/unescaping HTML5 Named Character References
+![travisci](https://travis-ci.org/bpabel/html5charref.svg)!
+
+Python library for escaping/unescaping HTML5 Named Character References.
+
+
+
