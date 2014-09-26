@@ -28,7 +28,7 @@ This project is still under development, so you should install it via GitHub
 instead of PyPI:
 
 ```sh
-pip install git+https://github.com/bpabel/htmlcharref.git
+pip install git+https://github.com/bpabel/html5charref.git
 ```
 
 
