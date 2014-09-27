@@ -49,7 +49,7 @@ setup(
     long_description=long_description,
     packages=['html5charref'],
     package_dir={'html5charref': 'html5charref'},
-    package_data={'html5charref': ['data/*.data']},
+    package_data={'html5charref': ['data/*.json']},
     include_package_data=True,
     platforms='any',
     test_suite='html5charref.tests.test_html5charref',

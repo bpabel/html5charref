@@ -7,13 +7,13 @@ Python library for escaping/unescaping HTML5 Named Character References.
 
 import os
 import re
-from pprint import pprint
+import json
 
 
 __version__ = '0.1.0'
 
 UPDATE_URL = r'http://dev.w3.org/html5/html-author/charref'
-CACHE_FILENAME = 'data/html5charref.data'
+CACHE_FILENAME = 'data/html5charref.json'
 
 charref_map = None
 unicode_map = None
@@ -43,7 +43,7 @@ def update_charrefs():
                     escape_map[escape_code] = unicode_char
 
     with open(filepath, 'w') as f:
-        pprint(escape_map, stream=f)
+        json.dump(escape_map, f, sort_keys=True, separators=(',', ': '), indent=0)
 
 
 def _load_charrefs():
@@ -59,7 +59,7 @@ def _load_charrefs():
         update_charrefs()
 
     with open(filepath, 'r') as f:
-        charref_map = eval(f.read())
+        charref_map = json.load(f)
 
     # Store the reverse lookup as well.
     # Some named character references refer to the same unicode point
