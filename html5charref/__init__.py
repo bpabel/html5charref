@@ -1,5 +1,73 @@
 """
+html5charref
+=============
+
 Python library for escaping/unescaping HTML5 Named Character References.
+
+The standard python library includes the `HTMLParser`_ package
+for unescaping HTML named entities and HTML unicode escapes.  Unfortunately,
+it doesn't include any of the named character entity references defined in
+`HTML5`_.  This library intends to provide a solution for 
+escaping/unescaping HTML character references defined in HTML5.
+
+.. _HTMLParser: https://docs.python.org/2/library/htmlparser.html
+.. _HTML5: http://dev.w3.org/html5/html-author/charref
+
+
+Installation
+------------
+
+This project is still under development, so you should install it via GitHub
+instead of PyPI::
+
+    pip install git+https://github.com/bpabel/html5charref.git
+
+
+
+Usage
+-------
+
+The main purpose of html5charref is to unescape HTML.
+
+::
+
+    html = u'This has &copy; and &lt; and &#x000a9; symbols'
+    print html5charref.unescape(html)
+    # u'This has \uxa9 and < and \uxa9 symbols' 
+
+
+You can also use html5charref to escape individual unicode characters.
+
+::
+
+    import html5charref
+    # The copyright character
+    print html5charref.escape_char(u'\u00a9')
+    # u'&copy;'
+
+
+
+Updating Named Entity References
+--------------------------------
+
+It is possible that additional named entity references will be 
+added to the HTLM5 spec.  You can update the list maintained by
+html5charref using the :func:`update_charrefs` function.  This queries
+the latest named entity definitions from the w3 HTML5 site.
+
+::
+
+    import html5charref
+    html5charref.update_charrefs()
+
+
+
+Licensing
+---------
+
+This project is licensed under the `MIT`_ license.
+
+.. _MIT: http://opensource.org/licenses/MIT
 
 
 """
@@ -82,12 +150,16 @@ def unescape_charref(charref):
     return charref_map.get(charref, charref)
 
 
-def escape_unicode(c):
+def escape_char(c, named_only=False):
     """
     Return an HTML5 named character reference for the given
     unicode character.  If no character entity reference is available,
     return a an html unicode escape, or the original unicode char if 
-    that cannot be done.
+    that cannot be done.  Characters that are part of ASCII are not escaped.
+    
+    :param bool named_only:  If set to True, will only try to use
+        named entities.  If a named entity can't be found, the original
+        character will be returned instead of an html unicode escape.
     
     .. note::
     
@@ -110,7 +182,18 @@ def escape_unicode(c):
                 if re.match('&[a-z]+;', charref):
                     return charref
         return charrefs[0]
+
+    elif named_only:
+        return c
+
     else:
+        # Don't try to unicode escape ascii chars.
+        try:
+            if ord(c) < 128:
+                return c
+        except TypeError:
+            return c
+
         # Use a unicode point escape if no named entity exists.
         try:
             return '&#x{0:05x};'.format(ord(c))
@@ -119,7 +202,8 @@ def escape_unicode(c):
             return c
 
 
-def escape_unicode_advanced(c):
+
+def escape_char_advanced(c):
     """
     Return a list of all HTML5 named character references for the given
     unicode character.    

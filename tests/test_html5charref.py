@@ -5,32 +5,36 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import html5charref
 
 
-def test_escape_unicode():
+def test_escape_char():
     s = u'a'
-    es = u'&#x00061;'
-    assert html5charref.escape_unicode(s) == es
+    es = u'a'
+    assert html5charref.escape_char(s) == es
 
     s = u'\u00a9'
     es = u'&copy;'
-    assert html5charref.escape_unicode(s) == es
+    assert html5charref.escape_char(s) == es
 
     s = u'<'
     es = u'&lt;'
-    assert html5charref.escape_unicode(s) == es
+    assert html5charref.escape_char(s) == es
 
     s = u'\u0229'
     es = u'&#x00229;'
-    assert html5charref.escape_unicode(s) == es
+    assert html5charref.escape_char(s) == es
+
+    s = u'\u0229'
+    es = u'\u0229'
+    assert html5charref.escape_char(s, named_only=True) == es
 
 
-def test_escape_unicode_advanced():
+def test_escape_char_advanced():
     s = u'\u00a9'
     es = ['&COPY;', '&copy;']
-    assert html5charref.escape_unicode_advanced(s) == es
+    assert html5charref.escape_char_advanced(s) == es
 
     s = u'a'
     es = None
-    assert html5charref.escape_unicode_advanced(s) == es
+    assert html5charref.escape_char_advanced(s) == es
 
 
 def test_unescape():
