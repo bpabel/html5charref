@@ -4,7 +4,7 @@ html5charref
 [![Build Status]
 (https://travis-ci.org/bpabel/html5charref.svg)]
 (https://travis-ci.org/bpabel/html5charref)
-[![Docs Status]
+[![Documentation Status]
 (https://readthedocs.org/projects/html5charref/badge/?version=latest)]
 (https://readthedocs.org/projects/html5charref/?badge=latest)
 
