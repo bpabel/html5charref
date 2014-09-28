@@ -19,7 +19,7 @@ def read(*filenames, **kwargs):
             buf.append(f.read())
     return sep.join(buf)
 
-long_description = 'Python library for escaping/unescaping HTML5 Named Character References'
+long_description = read('README.rst')
 
 class PyTest(TestCommand):
     def finalize_options(self):
@@ -45,7 +45,7 @@ setup(
     ],
     cmdclass={'test': PyTest},
     author_email='007brendan@gmail.com',
-    description=long_description,
+    description='Python library for escaping/unescaping HTML5 Named Character References.',
     long_description=long_description,
     packages=['html5charref'],
     package_dir={'html5charref': 'html5charref'},
