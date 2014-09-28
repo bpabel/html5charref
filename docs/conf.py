@@ -16,7 +16,7 @@ import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import html5charref
-import sphinx_rtd_theme
+#import sphinx_rtd_theme
 
 
 # If extensions (or modules to document with autodoc) are in another directory,
