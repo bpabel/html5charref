@@ -6,7 +6,7 @@ html5charref
 (https://travis-ci.org/bpabel/html5charref)
 [![Documentation Status]
 (https://readthedocs.org/projects/html5charref/badge/?version=latest)]
-(https://readthedocs.org/projects/html5charref/?badge=latest)
+(http://html5charref.readthedocs.org/en/latest/)
 
 
 
