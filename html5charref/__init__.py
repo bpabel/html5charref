@@ -27,7 +27,8 @@ instead of PyPI::
 Usage
 -------
 
-The main purpose of html5charref is to unescape HTML.
+The main purpose of html5charref is to unescape HTML named entities.  It 
+will also handle HTML unicode character escapes.
 
 ::
 
@@ -36,7 +37,8 @@ The main purpose of html5charref is to unescape HTML.
     # u'This has \uxa9 and < and \uxa9 symbols' 
 
 
-You can also use html5charref to escape individual unicode characters.
+You can also use html5charref to find the HTML5 named entity for a given
+unicode character.
 
 ::
 
