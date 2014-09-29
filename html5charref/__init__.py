@@ -250,6 +250,6 @@ def unescape(html):
             s = '&' + s + ';'
             return unescape_charref(s)
 
-    return re.sub(r"&(#?[xX]?(?:[0-9a-fA-F]+|\w{1,8}));", repl, html)
+    return re.sub(r"&(#?[xX]?(?:[0-9a-fA-F]+|\w+));", repl, html)
 
 

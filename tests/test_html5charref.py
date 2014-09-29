@@ -58,6 +58,10 @@ def test_unescape():
     es = u'&#x00229;'
     assert html5charref.unescape(es) == s
 
+    s = u'\u210b'
+    es = u'&HilbertSpace;'
+    assert html5charref.unescape(es) == s
+
 
 def test_update_charrefs():
     filepath = os.path.join(
