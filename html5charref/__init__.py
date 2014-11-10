@@ -171,7 +171,7 @@ def escape_char(c, named_only=False):
     
         Because several character references may refer to the same
         unicode point, the returned character reference may not be
-        the one you expect.  Use the :func:`escape_unicode_advanced` 
+        the one you expect.  Use the :func:`escape_char_advanced` 
         function to get a list of all named character references 
         for a given unicode point and choose the specific one you want.
     
