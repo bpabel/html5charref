@@ -1,15 +1,9 @@
 html5charref
 =============
 
-[![Build Status]
-(https://travis-ci.org/bpabel/html5charref.svg)]
-(https://travis-ci.org/bpabel/html5charref)
-[![Documentation Status]
-(https://readthedocs.org/projects/html5charref/badge/?version=latest)]
-(https://readthedocs.org/projects/html5charref/?badge=latest)
-[![License]
-(http://img.shields.io/badge/license-MIT-blue.svg)]
-(https://github.com/bpabel/html5charref/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/bpabel/html5charref.svg)](https://travis-ci.org/bpabel/html5charref)
+[![Documentation Status](https://readthedocs.org/projects/html5charref/badge/?version=latest)](https://readthedocs.org/projects/html5charref/?badge=latest)
+[![License](http://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/bpabel/html5charref/blob/master/LICENSE)
 
 Python library for escaping/unescaping HTML5 Named Character References.
 
