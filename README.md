@@ -20,11 +20,10 @@ character references defined in HTML5.
 Installation
 ------------
 
-This project is still under development, so you should install it via GitHub
-instead of PyPI:
+You can install this project from PyPI:
 
 ```sh
-pip install git+https://github.com/bpabel/html5charref.git
+pip install html5charref
 ```
 
 
